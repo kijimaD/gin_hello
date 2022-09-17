@@ -1,7 +1,10 @@
 version: '3.7'
 
 services:
-  web:
+  # マウントして変更を取り込むバージョン(開発用)
+  # goビルドだけ
+  # と思ったが、同じmain.goを使ってるので反映されない
+  web-mount-volume:
     image: golang
     ports:
       - 8080:8080
@@ -10,6 +13,13 @@ services:
       - go_volume:/.go
     working_dir: /sample
     command: bash -c "go run main.go"
+
+  # イメージビルドして変更を取り込むバージョン(本番用)
+  # イメージビルドとgoビルドで時間がかかる
+  web-image-build:
+    build: .
+    ports:
+      - 8081:8080
 
 volumes:
   go_volume:
