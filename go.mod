@@ -3,7 +3,7 @@ module sample
 go 1.13
 
 require (
-	github.com/gin-gonic/gin v1.8.1 // indirect
+	github.com/gin-gonic/gin v1.8.1
 	github.com/go-playground/validator/v10 v10.11.1 // indirect
 	github.com/goccy/go-json v0.9.11 // indirect
 	github.com/mattn/go-isatty v0.0.16 // indirect
