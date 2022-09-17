@@ -1,9 +1,8 @@
 version: '3.7'
 
 services:
-  # マウントして変更を取り込むバージョン(開発用)
+  # マウントして変更を取り込むバージョン(開発用).....と思ったが、同じmain.goを使ってるので反映されない
   # goビルドだけ
-  # と思ったが、同じmain.goを使ってるので反映されない
   web-mount-volume:
     image: golang
     ports:
